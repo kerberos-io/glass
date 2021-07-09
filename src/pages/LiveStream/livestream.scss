@@ -56,15 +56,61 @@
   margin-left: -11px;
 }
 
-.video-wall-fs{
+.video-wall-fs {
   width: 100%;
   height: 100%;
-  border: 2px solid red;
   position: absolute;
   top: 0;
   left: 0;
   box-sizing: border-box;
   z-index: 3;
   background-color: red;
-  opacity: 0.7;
+  .vw-header {
+    background: #262424;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    padding: 0px 0 0px 20px;
+    .brand-logo {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      img {
+        margin: 0 10px 0 0px;
+      }
+      h4 {
+        color: white;
+        margin: 0;
+      }
+    }
+    .grid-list {
+      display: flex;
+      align-items: center;
+      .numbers {
+        margin: 7px;
+        button {
+          border: 1px solid #edebeb;
+          box-sizing: border-box;
+          color: #6d6666;
+          width: 42px;
+          height: 36px;
+          background: none;
+          &:first-of-type {
+            border-radius: 4px 0px 0px 4px;
+            color: #84559f;
+          }
+          &:last-of-type {
+            border-radius: 0px 4px 4px 0px;
+          }
+          &:active {
+            color: #84559f;
+          }
+        }
+      }
+    }
+  }
+}
+
+svg {
+  cursor: pointer;
 }
