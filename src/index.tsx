@@ -2,10 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-
-import "./app.variables.css"; // This is taken from https://github.com/kerberos-io/ui/blob/main/.storybook/app.variables.css
-import "./index.scss"; // This is taken from node_modules/@kerberos-io/ui/lib/index.css and replaced suffix with .scss
-
+import "./index.scss";
 ReactDOM.render(
   <React.StrictMode>
     <App />

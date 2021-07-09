@@ -1,17 +1,28 @@
-import React from "react";
-
-import { Breadcrumb, Button, Icon, Profilebar, KPI } from "@kerberos-io/ui";
-
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Layout from "./components/Layout/Layout";
+import {
+  Dashboard,
+  Cameras,
+  LiveStream,
+  Media,
+  Connections,
+  LatestEvents,
+} from "./pages";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">Glass</header>
-      <Breadcrumb title={"Media"} level1={"12-09-2035"}>
-        <Button label={"Create media"} icon={"media"} type="success" />
-      </Breadcrumb>
-      <Icon label="alerts" />
-      <Profilebar username="ee" email="kj" role="j" />
-      <KPI divider="20" number="15" progress="+" progressValue="7" />
+      <BrowserRouter>
+        <Layout>
+          <Switch>
+            <Route path="/dashboard" component={Dashboard} />
+            <Route path="/events" component={LatestEvents} />
+            <Route path="/livestream" component={LiveStream} />
+            <Route path="/media" component={Media} />
+            <Route path="/cameras" component={Cameras} />
+            <Route path="/connections" component={Connections} />
+          </Switch>
+        </Layout>
+      </BrowserRouter>
     </div>
   );
 }
