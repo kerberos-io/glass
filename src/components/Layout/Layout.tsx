@@ -47,7 +47,7 @@ export default function Layout({ children }: LayoutProps) {
             />
             <NavigationItem
               link={"livestream"}
-              title={"Livestreams"}
+              title={"Live stream"}
               icon={"livestream"}
             />
             <NavigationItem link={"media"} title={"Media"} icon={"media"} />
