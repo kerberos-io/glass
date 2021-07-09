@@ -6,6 +6,7 @@ import {
   NavigationItem,
   VideoCard,
   StatusWithBadge,
+  Sidebar
 } from "@kerberos-io/ui";
 import "./livestream.scss";
 
@@ -65,6 +66,12 @@ export default function LiveStream() {
           headerStatus={"live"}
           videoStatus={"recording"}
         />
+      </div>
+      
+      <div className="video-wall-fs">
+       <div className="header"> 
+
+       </div>
       </div>
     </>
   );
