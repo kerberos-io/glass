@@ -1,20 +1,19 @@
 import React from "react";
-import {
-  Breadcrumb,
-  Button,
-  Icon,
-  NavigationGroup,
-  NavigationItem,
-  VideoCard,
-  StatusWithBadge,
-  Sidebar,
-} from "@kerberos-io/ui";
+import { Breadcrumb, Icon, VideoCard } from "@kerberos-io/ui";
 import "./livestream.scss";
-
 export default function LiveStream() {
   const [state, setState] = React.useState({
     showVideoWall: false,
   });
+  const videoProps = {
+    src: "https://www.w3schools.com/html/mov_bbb.mp4",
+    autoPlay: true,
+    poster: "",
+    preload: true,
+    muted: true,
+  };
+  const handleClickHD = () => console.log("HD");
+  const handleClickSD = () => console.log("SD");
   return (
     <>
       <div className="header">
@@ -55,27 +54,36 @@ export default function LiveStream() {
         <div className="video-wall-embedded ">
           <VideoCard
             label="Hailway"
-            videoSource={"/images/video.png"}
             headerStatus={"live"}
             videoStatus={"recording"}
+            {...videoProps}
+            handleClickHD={handleClickHD}
+            handleClickSD={handleClickSD}
           />
           <VideoCard
             label="Mailway"
-            videoSource={"/images/video.png"}
             headerStatus={"event-detected"}
             videoStatus={"recording"}
+            {...videoProps}
+            handleClickHD={handleClickHD}
+            handleClickSD={handleClickSD}
           />
           <VideoCard
             label="Railway"
-            videoSource={"/images/video.png"}
             headerStatus={"offline"}
             videoStatus={"recording"}
+            {...videoProps}
+            handleClickHD={handleClickHD}
+            handleClickSD={handleClickSD}
           />
           <VideoCard
             label="Sailway"
-            videoSource={"/images/video.png"}
             headerStatus={"live"}
             videoStatus={"recording"}
+            {...videoProps}
+            {...videoProps}
+            handleClickHD={handleClickHD}
+            handleClickSD={handleClickSD}
           />
         </div>
       ) : (
