@@ -11,12 +11,18 @@ import {
   Main,
   MainBody,
 } from "@kerberos-io/ui";
+import { useSelector } from "react-redux";
+import { RootState } from "../../state/store";
 import "./layout.scss";
 
 export interface LayoutProps {
   children?: any;
 }
+
 export default function Layout({ children }: LayoutProps) {
+  const navTextData = useSelector(
+    (state: RootState) => state.UIState.navTextData
+  );
   return (
     <div className="layout" id={"page-root"}>
       <Sidebar
@@ -32,41 +38,16 @@ export default function Layout({ children }: LayoutProps) {
           active={true}
         />
         <Navigation>
-          <NavigationSection title="monitoring" />
-          <NavigationGroup>
-            <NavigationItem
-              link={"dashboard"}
-              title={"Dashboard"}
-              icon={"dashboard"}
-              active={true}
-            />
-            <NavigationItem
-              link={"events"}
-              title={"Latest events"}
-              icon={"activity"}
-            />
-            <NavigationItem
-              link={"livestream"}
-              title={"Live stream"}
-              icon={"livestream"}
-            />
-            <NavigationItem link={"media"} title={"Media"} icon={"media"} />
-          </NavigationGroup>
-          <NavigationSection title="management" />
-          <NavigationGroup>
-            <NavigationItem
-              link={"cameras"}
-              title={"Cameras"}
-              icon={"cameras"}
-              active={true}
-            />
-            <NavigationItem
-              link={"connections"}
-              title={"Connections"}
-              icon={"cameras"}
-              active={true}
-            />
-          </NavigationGroup>
+          {navTextData.map(({ sectionTitle, navGroup, id }: any) => (
+            <div key={id}>
+              <NavigationSection title={sectionTitle} />
+              <NavigationGroup>
+                {navGroup.map((props: any) => (
+                  <NavigationItem {...props} key={props.id} />
+                ))}
+              </NavigationGroup>
+            </div>
+          ))}
         </Navigation>
       </Sidebar>
       <Main>

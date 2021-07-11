@@ -1,19 +1,31 @@
 import React from "react";
 import { Breadcrumb, Icon, VideoCard } from "@kerberos-io/ui";
 import "./livestream.scss";
+
+import { RootState } from "../../state/store";
+import { useDispatch, useSelector } from "react-redux";
+import { toogleVideoWall, getHD, getSD } from "../../state/reducers";
+
 export default function LiveStream() {
-  const [state, setState] = React.useState({
-    showVideoWall: false,
-  });
-  const videoProps = {
-    src: "https://www.w3schools.com/html/mov_bbb.mp4",
-    autoPlay: true,
-    poster: "",
-    preload: true,
-    muted: true,
+  const showVideoWall = useSelector(
+    (state: RootState) => state.UIState.showVideoWall
+  );
+  const videosData = useSelector((state: RootState) => state.videos.videosData);
+  const dispatch = useDispatch();
+
+  const handleClickVideoWall = () => {
+    dispatch(toogleVideoWall(`${!showVideoWall}`));
   };
-  const handleClickHD = () => console.log("HD");
-  const handleClickSD = () => console.log("SD");
+  const handleClickHD = () => {
+    dispatch(getHD("HD"));
+  };
+  const handleClickSD = () => {
+    dispatch(getSD("SD"));
+  };
+  const actions = {
+    handleClickHD,
+    handleClickSD,
+  };
   return (
     <>
       <div className="header">
@@ -22,11 +34,7 @@ export default function LiveStream() {
           level1={"Get instant overview of all your online cameras"}
         >
           <p className="item">Video wall</p>
-          <span
-            onClick={() =>
-              setState((preS) => ({ ...preS, showVideoWall: true }))
-            }
-          >
+          <span onClick={handleClickVideoWall}>
             <Icon label="toggle-off" />
           </span>
           <Icon label="alerts-notify" />
@@ -50,47 +58,20 @@ export default function LiveStream() {
           <p className="item">By Site</p>
         </div>
       </div>
-      {!state.showVideoWall ? (
+      {!showVideoWall ? (
         <div className="video-wall-embedded ">
-          <VideoCard
-            label="Hailway"
-            headerStatus={"live"}
-            videoStatus={"recording"}
-            {...videoProps}
-            handleClickHD={handleClickHD}
-            handleClickSD={handleClickSD}
-          />
-          <VideoCard
-            label="Mailway"
-            headerStatus={"event-detected"}
-            videoStatus={"recording"}
-            {...videoProps}
-            handleClickHD={handleClickHD}
-            handleClickSD={handleClickSD}
-          />
-          <VideoCard
-            label="Railway"
-            headerStatus={"offline"}
-            videoStatus={"recording"}
-            {...videoProps}
-            handleClickHD={handleClickHD}
-            handleClickSD={handleClickSD}
-          />
-          <VideoCard
-            label="Sailway"
-            headerStatus={"live"}
-            videoStatus={"recording"}
-            {...videoProps}
-            {...videoProps}
-            handleClickHD={handleClickHD}
-            handleClickSD={handleClickSD}
-          />
+          {videosData.map((props: any) => (
+            <VideoCard key={props.id} {...props} {...actions} />
+          ))}
         </div>
       ) : (
         <div className="video-wall-fs">
           <div className="vw-header">
             <a className="brand-logo">
-              <img src={"/images/header-minimal-logo-36x36.svg"} />
+              <img
+                src={"/images/header-minimal-logo-36x36.svg"}
+                onClick={handleClickVideoWall}
+              />
               <h4>{"Kerberos Hub Lite"}</h4>
             </a>
             <div className="grid-list">
