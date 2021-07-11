@@ -1,7 +1,12 @@
 import React from "react";
-import { Breadcrumb, Icon, VideoCard, Button } from "@kerberos-io/ui";
+import {
+  Breadcrumb,
+  Icon,
+  VideoCard,
+  Button,
+  StatusWithBadge,
+} from "@kerberos-io/ui";
 import "./livestream.scss";
-
 import { RootState } from "../../state/store";
 import { useDispatch, useSelector } from "react-redux";
 import { toogleVideoWall, getHD, getSD } from "../../state/reducers";
@@ -82,6 +87,16 @@ export default function LiveStream() {
                 <button>9</button>
               </div>
             </div>
+          </div>
+          <div className="container">
+            {videosData.map((props: any) => (
+              <VideoCard
+                isVideoWall={true}
+                key={props.id}
+                {...props}
+                {...actions}
+              />
+            ))}
           </div>
         </div>
       )}
