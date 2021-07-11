@@ -1,5 +1,5 @@
 import React from "react";
-import { Breadcrumb, Icon, VideoCard } from "@kerberos-io/ui";
+import { Breadcrumb, Icon, VideoCard, Button } from "@kerberos-io/ui";
 import "./livestream.scss";
 
 import { RootState } from "../../state/store";
@@ -27,7 +27,7 @@ export default function LiveStream() {
     handleClickSD,
   };
   return (
-    <>
+    <div id="page-live-stream">
       <div className="header">
         <Breadcrumb
           title={"Live stream"}
@@ -85,6 +85,17 @@ export default function LiveStream() {
           </div>
         </div>
       )}
-    </>
+      <div className="setup-connection">
+        <div className="setup-box">
+          <h3>Setup your first Connection</h3>
+          <p className="item">
+            Set up your first ConnectionTo use Kerberos Hub Lite, first you need
+            to configure your camera settings – Kerberos supports wide range of
+            USB, IP and RPi cameras
+          </p>
+          <Button icon={"plus-circle"} label="Add a Connection" type="" />
+        </div>
+      </div>
+    </div>
   );
 }
