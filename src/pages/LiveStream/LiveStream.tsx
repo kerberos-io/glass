@@ -63,14 +63,12 @@ export default function LiveStream() {
           <p className="item">By Site</p>
         </div>
       </div>
-      {!showVideoWall ? (
-        <div className="video-wall-embedded ">
-          {videosData.map((props: any) => (
-            <VideoCard key={props.id} {...props} {...actions} />
-          ))}
-        </div>
-      ) : (
-        <div className="video-wall-fs">
+      <div
+        className={
+          showVideoWall ? "video-wall-fullscreen" : "video-wall-embedded"
+        }
+      >
+        {showVideoWall ? (
           <div className="vw-header">
             <a className="brand-logo">
               <img
@@ -88,18 +86,22 @@ export default function LiveStream() {
               </div>
             </div>
           </div>
-          <div className="container">
-            {videosData.map((props: any) => (
-              <VideoCard
-                isVideoWall={true}
-                key={props.id}
-                {...props}
-                {...actions}
-              />
-            ))}
-          </div>
+        ) : null}
+        <div
+          className={
+            showVideoWall ? "container-fullscreen" : "container-embedded"
+          }
+        >
+          {videosData.map((props: any) => (
+            <VideoCard
+              isVideoWall={showVideoWall}
+              key={props.id}
+              {...props}
+              {...actions}
+            />
+          ))}
         </div>
-      )}
+      </div>
       <div className="setup-connection">
         <div className="setup-box">
           <h3>Setup your first Connection</h3>
