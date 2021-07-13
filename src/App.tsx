@@ -7,21 +7,23 @@ import {
   Media,
   Connections,
   LatestEvents,
+  Login,
 } from "./pages";
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Layout>
-          <Switch>
+        <Switch>
+          <Route path="/login" component={Login} />
+          <Layout>
             <Route path="/dashboard" component={Dashboard} />
             <Route path="/events" component={LatestEvents} />
             <Route path="/livestream" component={LiveStream} />
             <Route path="/media" component={Media} />
             <Route path="/cameras" component={Cameras} />
             <Route path="/connections" component={Connections} />
-          </Switch>
-        </Layout>
+          </Layout>
+        </Switch>
       </BrowserRouter>
     </div>
   );

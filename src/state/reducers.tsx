@@ -14,6 +14,13 @@ const initialState: State = {
       navGroup: [
         {
           id: nanoid(),
+          link: "login",
+          title: "Login",
+          icon: "dashboard",
+          active: true,
+        },
+        {
+          id: nanoid(),
           link: "dashboard",
           title: "Dashboard",
           icon: "dashboard",
