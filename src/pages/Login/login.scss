@@ -21,78 +21,7 @@
       margin-left: 10px;
     }
   }
-  // .right{
-  // }
-  // }
 
-  .unsuccess-msg {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-content: flex-start;
-    justify-content: space-around;
-    align-items: center;
-    width: -webkit-fill-available;
-    color: red;
-    background: hsla(2, 100%, 98%, 1);
-    height: 48px;
-    p {
-    }
-  }
-  .login-box {
-    width: 80%;
-    .login-input {
-      .input-title {
-        font-size: 12px;
-        display: flex;
-        justify-content: space-between;
-        p:first-of-type {
-          text-transform: uppercase;
-        }
-        p:last-of-type {
-          color: hsla(278, 30%, 48%, 1);
-          cursor: pointer;
-        }
-      }
-      .input-bar {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        flex-wrap: nowrap;
-        flex-direction: row;
-        align-content: center;
-        background: #ffffff;
-        color: var(--bg-muted);
-        border: 1px solid #e5e3e3;
-        box-sizing: border-box;
-        border-radius: 4px;
-      }
-
-      .input-icon {
-        margin: 0 0 0 25px;
-      }
-      .input-itself {
-        height: 48px;
-        input {
-          outline: none;
-          border: none;
-          &:focus {
-            outline: none;
-            border: none;
-            box-shadow: none;
-          }
-        }
-      }
-      .see-password {
-        height: 48px;
-        padding: 0 10px;
-        border-left: 1px solid #e5e3e3;
-        margin: auto;
-        display: flex;
-        align-items: center;
-      }
-    }
-  }
   .page-footer {
     height: 500px;
     position: relative;

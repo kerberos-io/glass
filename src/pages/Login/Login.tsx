@@ -8,6 +8,8 @@ import {
   BlockBody,
   BlockHeader,
   BlockFooter,
+  InputBox,
+  AlertMessage
 } from "@kerberos-io/ui";
 export default function Login() {
   return (
@@ -26,48 +28,20 @@ export default function Login() {
           <div className="right">En</div>
         </BlockHeader>
         <BlockBody>
-          <div className="unsuccess-msg">
-            <span>Wrong password, please try again</span>
-            <span>X</span>
-          </div>
-          <div className="login-box">
-            <div className="login-input">
-              <div className="input-title">
-                <p>Username or email</p>
-                <p></p>
-              </div>
-              <div className="input-bar">
-                <div className="input-icon">
-                  <Icon label="accounts" />
-                </div>
-                <div className="input-itself">
-                  <input placeholder="Your username/email" />
-                </div>
-                <div className="see-password">
-                  {/* <Icon label="alerts" /> */}
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="login-box">
-            <div className="login-input">
-              <div className="input-title">
-                <p>Password</p>
-                <p>Forgotten password?</p>
-              </div>
-              <div className="input-bar">
-                <div className="input-icon">
-                  <Icon label="accounts" />
-                </div>
-                <div className="input-itself">
-                  <input placeholder="Your password" />
-                </div>
-                <div className="see-password">
-                  <Icon label="alerts" />
-                </div>
-              </div>
-            </div>
-          </div>
+          <AlertMessage message="Wrong password, please try again!" />          
+          <InputBox
+            titleleft="Username or email"
+            iconleft="accounts"
+            placeholder="Your username/email"
+          />
+          <InputBox
+            titleleft="Password"
+            hint="Forgotten password?"
+            iconleft="accounts"
+            placeholder="Your password"
+            iconright="activity"
+            seperate
+          />
         </BlockBody>
         <BlockFooter>
           <div className="left">
