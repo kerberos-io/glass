@@ -9,8 +9,99 @@ import {
   BlockHeader,
   BlockFooter,
   InputBox,
-  AlertMessage
+  AlertMessage,
+  Footer,
+  FooterList
 } from "@kerberos-io/ui";
+const footerData = [
+  {
+    title: "Kerberos.io",
+    titlehref: "",
+    items: [
+      {
+        item: "@ 2021 Verstraeten.io",
+        itemhref: "sss",
+      },
+      {
+        item: "All right reserved",
+        itemhref: "",
+      },
+      {
+        item:"socials",
+        socials:[
+          <Icon label="activity" />,
+          <Icon label="activity" />,
+          <Icon label="activity" />,
+          <Icon label="activity" />
+        ]
+      }
+    ],
+  },
+  {
+    title: "Products",
+    titlehref: "",
+    items: [
+      {
+        item: "Opensource Agent",
+        itemhref: "",
+      },
+      {
+        item: "Enterprise Agent",
+        itemhref: "",
+      },
+      {
+        item: "Kerberos Hub",
+        itemhref: "",
+      },
+
+      {
+        item: "Kerberos Vault",
+        itemhref: "",
+      },
+    ],
+  },
+  {
+    title: "Support",
+    titlehref: "",
+    items: [
+      {
+        item: "Documantation",
+        itemhref: "",
+      },
+      {
+        item: "Enterperise Support",
+        itemhref: "",
+      },
+
+      {
+        item: "Reddit Community",
+        itemhref: "",
+      },
+    ],
+  },
+  {
+    title: "Company",
+    titlehref: "",
+    items: [
+      {
+        item: "About",
+        itemhref: "",
+      },
+      {
+        item: "Contact",
+        itemhref: "",
+      },
+      {
+        item: "Blog",
+        itemhref: "",
+      },
+      {
+        item: "Careers",
+        itemhref: "",
+      },
+    ],
+  },
+];
 export default function Login() {
   return (
     <div id="page-login">
@@ -28,7 +119,7 @@ export default function Login() {
           <div className="right">En</div>
         </BlockHeader>
         <BlockBody>
-          <AlertMessage message="Wrong password, please try again!" />          
+          <AlertMessage message="Wrong password, please try again!" />
           <InputBox
             titleleft="Username or email"
             iconleft="accounts"
@@ -52,7 +143,11 @@ export default function Login() {
           </div>
         </BlockFooter>
       </Block>
-      <div className="page-footer"></div>
+        <Footer>
+        {footerData.map((items) => (
+          <FooterList {...items} />
+          ))}
+        </Footer>
     </div>
   );
 }

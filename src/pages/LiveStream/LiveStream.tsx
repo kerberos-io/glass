@@ -4,7 +4,7 @@ import {
   Icon,
   VideoCard,
   Button,
-  StatusWithBadge,
+  Badge,
 } from "@kerberos-io/ui";
 import "./livestream.scss";
 import { RootState } from "../../state/store";
