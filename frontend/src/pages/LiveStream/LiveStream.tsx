@@ -4,12 +4,13 @@ import {
   Icon,
   VideoCard,
   Button,
-  Badge,
+  StatusWithBadge,
 } from "@kerberos-io/ui";
 import "./livestream.scss";
-import { RootState } from "../../state/store";
+import { RootState } from "../../store";
 import { useDispatch, useSelector } from "react-redux";
-import { toogleVideoWall, getHD, getSD } from "../../state/reducers";
+import { toogleVideoWall } from "../../reducers/ui";
+import { getHD, getSD } from "../../reducers/data";
 
 export default function LiveStream() {
   const showVideoWall = useSelector(

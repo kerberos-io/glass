@@ -1,5 +1,3 @@
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Layout from "./components/Layout/Layout";
 import {
   Dashboard,
   Cameras,
@@ -7,26 +5,27 @@ import {
   Media,
   Connections,
   LatestEvents,
-  Login,
 } from "./pages";
-function App() {
+
+import Layout from "./components/Layout/Layout";
+import RequireAuth from './containers/RequireAuth';
+import RequireGuest from './containers/RequireGuest';
+import Login from './pages/Login/Login';
+
+interface Props {
+  children: any;
+}
+
+function App(props: Props) {
+  const {children} = props;
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Switch>
-          <Route path="/login" component={Login} />
-          <Layout>
-            <Route path="/dashboard" component={Dashboard} />
-            <Route path="/events" component={LatestEvents} />
-            <Route path="/livestream" component={LiveStream} />
-            <Route path="/media" component={Media} />
-            <Route path="/cameras" component={Cameras} />
-            <Route path="/connections" component={Connections} />
-          </Layout>
-        </Switch>
-      </BrowserRouter>
-    </div>
+      <div>
+        {children}
+        <div>learn react</div>
+      </div>
   );
+
+
 }
 
 export default App;
