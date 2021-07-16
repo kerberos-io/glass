@@ -6,7 +6,7 @@ import (
 	"github.com/gin-gonic/contrib/static"
 	"github.com/gin-gonic/gin"
 	//Swagger documentantion
-	_ "github.com/kerberos-io/opensource/machinery/docs"
+	_ "github.com/kerberos-io/glass/api/docs"
 	swaggerFiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
 	"log"

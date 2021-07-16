@@ -1,4 +1,4 @@
-module github.com/kerberos-io/opensource/machinery
+module github.com/kerberos-io/glass/api
 
 go 1.15
 

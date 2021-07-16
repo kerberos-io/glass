@@ -4,7 +4,7 @@ import (
 	jwt "github.com/appleboy/gin-jwt/v2"
 	jwtgo "github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
-	"github.com/kerberos-io/opensource/machinery/src/models"
+	"github.com/kerberos-io/glass/api/src/models"
 	"net/http"
 	"time"
 )

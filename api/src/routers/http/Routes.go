@@ -3,8 +3,8 @@ package http
 import (
 	"github.com/appleboy/gin-jwt/v2"
 	"github.com/gin-gonic/gin"
-	"github.com/kerberos-io/opensource/machinery/src/components"
-	"github.com/kerberos-io/opensource/machinery/src/models"
+	"github.com/kerberos-io/glass/api/src/components"
+	"github.com/kerberos-io/glass/api/src/models"
 )
 
 func AddRoutes(r *gin.Engine, authMiddleware *jwt.GinJWTMiddleware) *gin.RouterGroup{
