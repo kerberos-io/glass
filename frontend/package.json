@@ -1,6 +1,6 @@
 {
-  "name": "web",
-  "version": "0.0.1",
+  "name": "glass",
+  "version": "1.0.0",
   "private": false,
   "dependencies": {
     "@material-ui/core": "^4.11.2",
@@ -32,7 +32,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && mv build ../machinery/www",
+    "build": "react-scripts build && mv build ../api/www",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint --debug 'src/**/*.{js,jsx,ts,tsx}'",
