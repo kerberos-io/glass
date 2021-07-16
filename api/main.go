@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/kerberos-io/opensource/machinery/src/routers"
+	"github.com/kerberos-io/glass/api/src/routers"
 	"log"
 	"os"
 )
