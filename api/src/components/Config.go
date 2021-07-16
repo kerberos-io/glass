@@ -3,7 +3,7 @@ package components
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/kerberos-io/opensource/machinery/src/models"
+	"github.com/kerberos-io/glass/api/src/models"
 	"io/ioutil"
 	"os"
 	"time"
