@@ -1,8 +1,9 @@
+import { combineReducers } from 'redux';
+import { connectRouter } from 'connected-react-router';
 import auth from './auth';
-import  DataSlice  from "./data";
-import  UISlice  from './ui';
-export {
-  auth,
-  UISlice,
-  DataSlice
-}
+
+export default (history: any) =>
+    combineReducers({
+      auth,
+      router: connectRouter(history),
+    });

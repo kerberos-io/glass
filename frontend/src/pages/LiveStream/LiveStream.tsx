@@ -7,26 +7,20 @@ import {
   StatusWithBadge,
 } from "@kerberos-io/ui";
 import "./livestream.scss";
-import { RootState } from "../../store";
 import { useDispatch, useSelector } from "react-redux";
 import { toogleVideoWall } from "../../reducers/ui";
 import { getHD, getSD } from "../../reducers/data";
 
 export default function LiveStream() {
-  const showVideoWall = useSelector(
-    (state: RootState) => state.UIState.showVideoWall
-  );
-  const videosData = useSelector((state: RootState) => state.videos.videosData);
-  const dispatch = useDispatch();
+
+  const showVideoWall = true;
+  const videosData: any[] = [];
 
   const handleClickVideoWall = () => {
-    dispatch(toogleVideoWall(`${!showVideoWall}`));
   };
   const handleClickHD = () => {
-    dispatch(getHD("HD"));
   };
   const handleClickSD = () => {
-    dispatch(getSD("SD"));
   };
   const actions = {
     handleClickHD,

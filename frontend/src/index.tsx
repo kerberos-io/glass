@@ -6,6 +6,7 @@ import { ConnectedRouter, routerMiddleware } from "connected-react-router";
 import { createBrowserHistory } from "history";
 import { Provider } from "react-redux";
 import App from "./App"
+import rootReducer from './reducers';
 import RequireAuth from './containers/RequireAuth';
 import RequireGuest from './containers/RequireGuest';
 import Login from "./pages/Login/Login";
@@ -14,7 +15,6 @@ import Layout from "./components/Layout/Layout";
 import {applyMiddleware, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
-
 import "./global.scss";
 
 const history = createBrowserHistory();
@@ -29,13 +29,11 @@ function getAuthState():AuthState {
     let state:AuthState = {
         auth: {}
     };
-
     try {
         const token = localStorage.getItem('token') || null;
         const expire = localStorage.getItem('expire') || "";
         const username = localStorage.getItem('username') || null;
         const role = localStorage.getItem('role') || null;
-        // const installed = localStorage.getItem('installed') || null;
         const difference: number = new Date(expire).valueOf() - new Date().valueOf();
         state.auth = {
             token,
@@ -66,7 +64,7 @@ ReactDOM.render(
                 <Switch>
                     <Route path="/login" component={RequireGuest(Login)} />
                     <App>
-                        <Route exact path="/dashboard" component={RequireAuth(Dashboard)} />
+                        <Route exact path="/dashboard" component={RequireGuest(Dashboard)} />
                         <Route path="/events" component={RequireAuth(LatestEvents)} />
                         <Route path="/livestream" component={RequireAuth(LiveStream)} />
                         <Route path="/media" component={RequireAuth(Media)} />
@@ -84,13 +82,3 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
-// @ts-ignore
-function rootReducer(history: History<unknown>): import("redux").Reducer<{
-    auth: {
-        token: string; expire: string; username: string; role: string; loggedIn: boolean; loginError: boolean; installed: boolean; //! !installed,
-        error: string;
-    };
-}, import("redux").Action<any>> {
-    throw new Error("Function not implemented.");
-}
-
