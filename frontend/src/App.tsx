@@ -20,7 +20,7 @@ function App(props: Props) {
   const {children} = props;
   return (
       <div id={"page-root"}>
-        <Sidebar title="Kerberos.io" version="v3.0">
+        <Sidebar title="Kerberos.io Glass" version="v3.0">
           <Profilebar
               username={"cedricve"}
               email={"cedric@kerberos.io"}
