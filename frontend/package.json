@@ -36,7 +36,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && mv build/* ../api/www",
+    "build": "react-scripts build",
+    "build-and-move": "react-scripts build && mv build/* ../api/www",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint --debug 'src/**/*.{js,jsx,ts,tsx}'",

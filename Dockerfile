@@ -25,7 +25,7 @@ RUN apt-get update -y && apt-get install -y curl && curl -sL https://deb.nodesou
 # Build Frontend
 
 RUN cd /go/src/github.com/kerberos-io/glass/frontend && \
-    npm install && mkdir -p ../api/www && yarn build
+    npm install && mkdir -p ../api/www && yarn build-and-move
     # this will move the /build directory to ../api/www
 
 ##################
