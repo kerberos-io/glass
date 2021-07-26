@@ -52,7 +52,7 @@ docker:
 
 kubernetes-staging:
   image: registry.cn-hangzhou.aliyuncs.com/haoshuwei24/kubectl:1.16.6
-  stage: kubernetes
+  stage: kubernetes-staging
   environment:
     name: staging
   script:
@@ -62,7 +62,7 @@ kubernetes-staging:
 
 kubernetes-production:
   image: registry.cn-hangzhou.aliyuncs.com/haoshuwei24/kubectl:1.16.6
-  stage: kubernetes
+  stage: kubernetes-production
   environment:
     name: production
   script:
