@@ -19,7 +19,7 @@ COPY frontend /go/src/github.com/kerberos-io/glass/frontend
 RUN apt-get update -y && apt-get install curl && curl -sL https://deb.nodesource.com/setup_14.x | bash - && \
     curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
-    apt update && apt install yarn -y
+    apt update -y && apt install yarn -y
 
 ###########
 # Build Frontend
@@ -41,7 +41,7 @@ RUN cd /go/src/github.com/kerberos-io/glass/api && \
 
  ####################################
  # Let's create a /dist folder containing just the files necessary for runtime.
- # Later, it will be copied as the / (root) of the output image. 
+ # Later, it will be copied as the / (root) of the output image.
 
  WORKDIR /dist
  RUN cp -r /glass ./

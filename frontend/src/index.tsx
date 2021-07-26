@@ -17,7 +17,6 @@ import thunk from "redux-thunk";
 import "./index.scss";
 import {Redirect} from "react-router";
 
-
 const history = createBrowserHistory();
 
 // We get the token from the store to initialise the store.
