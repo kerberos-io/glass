@@ -39,7 +39,7 @@ class App extends React.Component<Props, State> {
         <div id={"page-root"}>
           <Sidebar title="Kerberos.io Glass" version="v3.0">
             <Profilebar
-                username={"cedricve"}
+                username={"admin"}
                 email={"cedric@kerberos.io"}
                 role={"owner"}
                 active={true}
