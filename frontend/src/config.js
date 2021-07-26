@@ -4,7 +4,7 @@ const { protocol } = window.location;
 const dev = {
   ENV: 'dev',
   HOSTNAME: hostname,
-  API_URL: `${protocol}//${hostname}:8080/`,
+  API_URL: `${protocol}//${hostname}:8082/`,
 };
 
 const prod = {

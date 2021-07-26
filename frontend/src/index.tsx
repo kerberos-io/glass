@@ -11,11 +11,12 @@ import RequireAuth from './containers/RequireAuth';
 import RequireGuest from './containers/RequireGuest';
 import Login from "./pages/Login/Login";
 import {Cameras, Connections, Dashboard, LatestEvents, LiveStream, Media } from "./pages";
-import Layout from "./components/Layout/Layout";
 import {applyMiddleware, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
-import "./global.scss";
+import "./index.scss";
+import {Redirect} from "react-router";
+
 
 const history = createBrowserHistory();
 
@@ -64,7 +65,8 @@ ReactDOM.render(
                 <Switch>
                     <Route path="/login" component={RequireGuest(Login)} />
                     <App>
-                        <Route exact path="/dashboard" component={RequireGuest(Dashboard)} />
+                        <Redirect from="/" to="/dashboard" exact />
+                        <Route exact path="/dashboard" component={RequireAuth(Dashboard)} />
                         <Route path="/events" component={RequireAuth(LatestEvents)} />
                         <Route path="/livestream" component={RequireAuth(LiveStream)} />
                         <Route path="/media" component={RequireAuth(Media)} />

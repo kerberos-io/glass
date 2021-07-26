@@ -9,22 +9,16 @@ import (
 
 func main() {
 
-	const VERSION = 3.0
+	const VERSION = 1.0
 	action := os.Args[1]
 
 	switch action {
 	case "version":
-		log.Printf("%s: %0.1f\n", "You are currrently running Kerberos Open Source", VERSION)
-	case "pending-upload":
-		name := os.Args[2]
-		fmt.Println(name)
-	case "discover":
-		timeout := os.Args[2]
-		fmt.Println(timeout)
+		log.Printf("%s: %0.1f\n", "You are currrently running Kerberos Glass", VERSION)
 	case "run":
 		{
-			name := os.Args[2]
-			port := os.Args[3]
+			name := "glass" // os.Args[2]
+			port := "8082" //os.Args[3]
 			routers.StartMqttListener(name)
 			routers.StartWebserver(name, port)
 		}

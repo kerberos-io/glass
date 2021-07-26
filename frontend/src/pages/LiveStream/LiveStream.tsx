@@ -2,9 +2,9 @@ import React from "react";
 import {
   Breadcrumb,
   Icon,
-  VideoCard,
+  //VideoCard,
   Button,
-  StatusWithBadge,
+  //StatusWithBadge,
 } from "@kerberos-io/ui";
 import "./livestream.scss";
 import { useDispatch, useSelector } from "react-redux";
@@ -87,14 +87,14 @@ export default function LiveStream() {
             showVideoWall ? "container-fullscreen" : "container-embedded"
           }
         >
-          {videosData.map((props: any) => (
+          {/*videosData.map((props: any) => (
             <VideoCard
               isVideoWall={showVideoWall}
               key={props.id}
               {...props}
               {...actions}
             />
-          ))}
+          ))*/}
         </div>
       </div>
       <div className="setup-connection">
