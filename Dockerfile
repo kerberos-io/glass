@@ -41,7 +41,7 @@ RUN cd /go/src/github.com/kerberos-io/glass/api && \
 
  ####################################
  # Let's create a /dist folder containing just the files necessary for runtime.
- # Later, it will be copied as the / (root) of the output image.
+ # Later, it will be copied as the / (root) of the output image. 
 
  WORKDIR /dist
  RUN cp -r /glass ./
