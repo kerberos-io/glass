@@ -8,9 +8,9 @@ const dev = {
 };
 
 const prod = {
-  ENV: 'prod',
+  ENV: "prod",
   HOSTNAME: hostname,
-  API_URL: `${protocol}//${hostname}/api/`,
+  API_URL: window["env"]["apiUrl"] !== "" ? `${protocol}//${window["env"]["apiUrl"]}/` : `${protocol}//${hostname}/`,
 };
 
 const config = process.env.REACT_APP_STAGE === 'production' ? prod : dev;
