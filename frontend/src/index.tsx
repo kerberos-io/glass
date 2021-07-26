@@ -65,7 +65,7 @@ ReactDOM.render(
                 <Switch>
                     <Route path="/login" component={RequireGuest(Login)} />
                     <App>
-                        <Redirect exact from="/" to="/dashboard" />
+                        <Route exact path="/" render={() => <Redirect to="/dashboard" />} />
                         <Route exact path="/dashboard" component={RequireAuth(Dashboard)} />
                         <Route path="/events" component={RequireAuth(LatestEvents)} />
                         <Route path="/livestream" component={RequireAuth(LiveStream)} />

@@ -16,7 +16,6 @@ import { logout } from "./actions";
 import "@kerberos-io/ui/lib/index.css";
 
 interface Props {
-  logout: any;
   children: any;
   dispatchLogout: any;
 }
