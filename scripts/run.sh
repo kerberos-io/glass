@@ -1,4 +1,4 @@
 #!/bin/bash
 
-envsubst < /var/www/frontend/assets/env.template.js > /var/www/frontend/assets/env.js
+envsubst < /glass/www/assets/env.template.js > /glass/www/assets/env.js
 /usr/bin/supervisord -n -c /etc/supervisord.conf
