@@ -9,7 +9,7 @@ import App from "./App"
 import rootReducer from './reducers';
 import RequireAuth from './containers/RequireAuth';
 import RequireGuest from './containers/RequireGuest';
-//import Login from "./pages/LoginOld/Login";
+//import  Login from "./pages/LoginOld/Login";
 import {Cameras, Connections, Dashboard, LatestEvents, LiveStream, Media, Login, Signup } from "./pages";
 import {applyMiddleware, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
