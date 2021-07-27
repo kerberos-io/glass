@@ -18,7 +18,7 @@ const mapStateToProps = (state:any) => ({
  function Login(props:any){
     const { loginError, error } = props;
 
-    const handleSubmit=(event:any)=>{
+    const handleSubmit=(event:React.SyntheticEvent|any)=>{
         event.preventDefault();
         const { dispatchLogin } = props;
         const { target } = event;
