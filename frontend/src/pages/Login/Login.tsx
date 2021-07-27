@@ -1,12 +1,41 @@
 import React from "react";
-import { Block,Button,BlockHeader,BlockBody,BlockFooter,AlertMessage,Input, Icon,LandingLayout} from "@kerberos-io/ui";
+import { Block,Button,BlockHeader,BlockBody,BlockFooter,AlertMessage,Input, Icon,LandingLayout,Form} from "@kerberos-io/ui";
+import { login } from '../../actions';
+import { withRouter,Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import "./login.scss"
 
-export default function Login(){
+const mapStateToProps = (state:any) => ({
+    loginError: state.auth.loginError,
+    error: state.auth.error,
+  });
+  
+  const mapDispatchToProps = (dispatch:any) => ({
+    dispatchLogin: (username:any, password:any) => {
+      dispatch(login(username, password));
+    },
+  });
+ function Login(props:any){
+    const { loginError, error } = props;
+
+    const handleSubmit=(event:any)=>{
+        event.preventDefault();
+        const { dispatchLogin } = props;
+        const { target } = event;
+        const data = new FormData(target);
+        dispatchLogin(data.get('username'), data.get('password'));
+    }
+    const usernameProps={
+        name:"username"
+    }
+    const passwordProps={
+        name:"password"
+    }
     return(
         <LandingLayout>
         <section className="login-signup-body">
             <Block>
+                <Form onSubmit={handleSubmit}>
                 <BlockHeader>
                     <div>
                         <Icon label="login" /> <h4>Login</h4>
@@ -17,7 +46,7 @@ export default function Login(){
                         value="EN"
                         />
                 </BlockHeader>
-                <AlertMessage message="Wrong password, please try again!" />
+                <AlertMessage show={loginError} message={error} />
                 <BlockBody>
                     <Input
                       label={"username or email"}
@@ -25,6 +54,7 @@ export default function Login(){
                       readonly={false}
                       disabled={false}
                       type="text"
+                     {...usernameProps}
                     //   value=""
                       iconleft="accounts"
                       iconright=""
@@ -36,6 +66,7 @@ export default function Login(){
                        readonly={false}
                        disabled={false}
                        type="password"
+                       {...passwordProps}
                        hint="Forgotten password?"
                        iconleft="accounts"
                        iconright="activity"
@@ -43,11 +74,19 @@ export default function Login(){
                     />
                 </BlockBody>
                 <BlockFooter>
+                    <Link to="/signup">
                     <Button icon="" type="outlined" label="Sign-up" />
-                    <Button type="default" icon="logout" label="Login" />
+                    </Link>
+                    <Button type="submit" icon="logout" label="Login" />
                 </BlockFooter>
+                </Form>
             </Block>
         </section>
         </LandingLayout>
     )
 }
+
+export default withRouter(
+    connect(mapStateToProps, mapDispatchToProps)(Login)
+  );
+  

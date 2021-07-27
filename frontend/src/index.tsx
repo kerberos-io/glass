@@ -63,9 +63,7 @@ ReactDOM.render(
             <React.StrictMode>
                 <Switch>
                     <Route path="/login" component={RequireGuest(Login)} />
-                    <Route path="/login" component={RequireGuest(Signup)} />
-                    {/* <Route path="/login" component={(Login)} />
-                    <Route path="/signup" component={(Signup)} /> */}
+                    <Route path="/signup" component={RequireGuest(Signup)} />
                     <App>
                         <Route exact path="/" render={() => <Redirect to="/dashboard" />} />
                         <Route exact path="/dashboard" component={RequireAuth(Dashboard)} />
