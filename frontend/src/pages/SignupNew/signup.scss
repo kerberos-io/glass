@@ -1,0 +1,26 @@
+@import "../../app.variables";
+.login-signup-body {
+    display: flex;
+    justify-content: center;
+    padding: 0 0 size(5) 0;
+
+    .block-generic{
+        .alert-message{
+            width: 100%;
+        }
+        .block-body{
+            padding: size(2) size(5);
+            .termsofuse{
+                width: size(28);
+            }
+        }
+        .block-header{
+            .generic-input{
+                .input-labels{
+                    display: none;
+                }
+            }
+         
+        }
+    }
+}
