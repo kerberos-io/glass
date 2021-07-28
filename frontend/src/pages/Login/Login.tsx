@@ -57,7 +57,7 @@ const mapStateToProps = (state:any) => ({
                      {...usernameProps}
                     //   value=""
                       iconleft="accounts"
-                      iconright=""
+                    //   iconright=""
                     />
                     <Input
                        label={"password"}

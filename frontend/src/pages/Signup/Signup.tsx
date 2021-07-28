@@ -49,11 +49,11 @@ const mapStateToProps = (state:any) => ({
                     <div>
                         <Icon label="verify" /> <h4>Signup</h4>
                     </div>
-                    <Input                        
+                    {/* <Input                        
                         iconright="arrow-down-full-sm"
                         type="button"
                         value="EN"
-                        />
+                        /> */}
                 </BlockHeader>
                 {loginError && <AlertMessage  message={error} />}  
                 <BlockBody>
@@ -63,6 +63,7 @@ const mapStateToProps = (state:any) => ({
                         placeholder="Your username"
                         type="text"
                         {...usernameProps}
+                        iconright=""
 
                     />
                     <Input
