@@ -97,8 +97,8 @@ const mapStateToProps = (state:any) => ({
                     <TermsOfUse {...termsofuse}/>
                 </BlockBody>
                 <BlockFooter>
-                    <Button icon="verify" type="outlined" label="Sign-up" />
-                    <Button type="transparent" icon="verify" label="Sign-up" />
+                    {/* <Button icon="" type="outlined" label="Sign-up" /> */}<p></p>
+                    <Button type="default" icon="verify" label="Sign-up" />
                 </BlockFooter>
                 </form>
             </Block>

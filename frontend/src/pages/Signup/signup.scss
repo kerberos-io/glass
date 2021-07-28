@@ -10,13 +10,7 @@
             .generic-input{
                 width: size(26);
                 cursor: auto;
-                &:focus-within{
-                    box-shadow: none;
-                 
-                  }
-                &:focus{
-                box-shadow: none;
-                }
+             
             }
         }
         .block-header{
