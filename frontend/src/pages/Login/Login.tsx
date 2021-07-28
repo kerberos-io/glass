@@ -46,7 +46,7 @@ const mapStateToProps = (state:any) => ({
                         value="EN"
                         />
                 </BlockHeader>
-                <AlertMessage show={loginError} message={error} />
+                {loginError && <AlertMessage  message={error} />}  
                 <BlockBody>
                     <Input
                       label={"username or email"}
