@@ -7,5 +7,3 @@ Master branch
 
 Develop branch
 > [staging.glass.kerberos.live](https://staging.glass.kerberos.live)
-
-@TODO fill in documentation
