@@ -42,10 +42,12 @@ func StartServer(name string, port string) {
 	r.Use(CORS())
 
 	// Serve web static files (!!THIS SHOULD MATCH THE REACT ROUTES).
-	r.Use(static.Serve("/", static.LocalFile("./www", true)))
-	r.Use(static.Serve("/login", static.LocalFile("./www", true)))
-	r.Use(static.Serve("/dashboard", static.LocalFile("./www", true)))
-	r.Use(static.Serve("/events", static.LocalFile("./www", true)))
+	local := static.LocalFile("./www", true)
+	r.Use(static.Serve("/", local))
+	r.Use(static.Serve("/login", local))
+	r.Use(static.Serve("/livestream", local))
+	r.Use(static.Serve("/dashboard", local))
+	r.Use(static.Serve("/events", local))
 
 	// Add Swagger
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
