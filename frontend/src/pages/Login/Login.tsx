@@ -35,7 +35,7 @@ const mapStateToProps = (state:any) => ({
         <LandingLayout>
         <section className="login-signup-body">
             <Block>
-                <Form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit}>
                 <BlockHeader>
                     <div>
                         <Icon label="login" /> <h4>Login</h4>
@@ -79,7 +79,7 @@ const mapStateToProps = (state:any) => ({
                     </Link>
                     <Button type="submit" icon="logout" label="Login" />
                 </BlockFooter>
-                </Form>
+                </form>
             </Block>
         </section>
         </LandingLayout>
