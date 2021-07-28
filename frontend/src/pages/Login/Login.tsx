@@ -35,7 +35,7 @@ const mapStateToProps = (state:any) => ({
         <LandingLayout>
         <section className="login-signup-body">
             <Block>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} noValidate>
                 <BlockHeader>
                     <div>
                         <Icon label="login" /> <h4>Login</h4>

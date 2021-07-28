@@ -44,7 +44,7 @@ const mapStateToProps = (state:any) => ({
         <LandingLayout>
             <section className="login-signup-body">
                 <Block>
-                    <Form onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit} noValidate>
                     <BlockHeader>
                     <div>
                         <Icon label="verify" /> <h4>Signup</h4>
@@ -99,7 +99,7 @@ const mapStateToProps = (state:any) => ({
                     <Button icon="verify" type="outlined" label="Sign-up" />
                     <Button type="transparent" icon="verify" label="Sign-up" />
                 </BlockFooter>
-                </Form>
+                </form>
             </Block>
         </section>
     </LandingLayout>
