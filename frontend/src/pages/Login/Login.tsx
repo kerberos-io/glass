@@ -10,12 +10,14 @@ const mapStateToProps = (state:any) => ({
     error: state.auth.error,
   });
   
-  const mapDispatchToProps = (dispatch:any) => ({
+const mapDispatchToProps = (dispatch:any) => ({
     dispatchLogin: (username:any, password:any) => {
       dispatch(login(username, password));
     },
-  });
+});
+
  function Login(props:any){
+
     const { loginError, error } = props;
 
     const handleSubmit=(event:React.SyntheticEvent|any)=>{
@@ -75,7 +77,7 @@ const mapStateToProps = (state:any) => ({
                 </BlockBody>
                 <BlockFooter>
                     <Link to="/signup">
-                    <Button icon="" type="outlined" label="Sign-up" />
+                        <Button icon="" type="outlined" label="Sign-up" />
                     </Link>
                     <Button type="submit" icon="logout" label="Login" />
                 </BlockFooter>
@@ -88,5 +90,4 @@ const mapStateToProps = (state:any) => ({
 
 export default withRouter(
     connect(mapStateToProps, mapDispatchToProps)(Login)
-  );
-  
+);
