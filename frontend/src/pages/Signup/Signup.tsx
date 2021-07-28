@@ -41,8 +41,8 @@ const mapStateToProps = (state:any) => ({
         name:"email"
     }
     return(   
-        <LandingLayout>
-            <section className="login-signup-body">
+        <LandingLayout title="Kerberos Glass" version="v1.0" description="A single pane of glass for Kerberos Open Source and Kerberos Enterprise agents">
+            <section className="signup-body">
                 <Block>
                     <form onSubmit={handleSubmit} noValidate>
                     <BlockHeader>
