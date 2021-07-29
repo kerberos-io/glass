@@ -15,7 +15,7 @@ jobs:
 
   frontend:
     docker:
-      - image: cimg/node:15.11.0
+      - image: cimg/python:3.8.0-node
     steps:
       - checkout
       - run: node --version
