@@ -34,19 +34,19 @@ const mapDispatchToProps = (dispatch:any) => ({
         name:"password"
     }
     return(
-        <LandingLayout>
-        <section className="login-signup-body">
+        <LandingLayout title="Kerberos Glass" version="v1.0" description="A single pane of glass for Kerberos Open Source and Kerberos Enterprise agents">
+        <section className="login-body">
             <Block>
                 <form onSubmit={handleSubmit} noValidate>
                 <BlockHeader>
                     <div>
                         <Icon label="login" /> <h4>Login</h4>
                     </div>
-                    <Input                        
+                    {/* <Input                        
                         iconright="arrow-down-full-sm"
                         type="button"
                         value="EN"
-                        />
+                        /> */}
                 </BlockHeader>
                 {loginError && <AlertMessage  message={error} />}  
                 <BlockBody>
@@ -59,7 +59,7 @@ const mapDispatchToProps = (dispatch:any) => ({
                      {...usernameProps}
                     //   value=""
                       iconleft="accounts"
-                      iconright=""
+                    //   iconright=""
                     />
                     <Input
                        label={"password"}
@@ -69,16 +69,17 @@ const mapDispatchToProps = (dispatch:any) => ({
                        disabled={false}
                        type="password"
                        {...passwordProps}
-                       hint="Forgotten password?"
-                       iconleft="accounts"
+                    //    hint="Forgotten password?"
+                       iconleft="locked"
                        iconright="activity"
                        seperate
                     />
                 </BlockBody>
                 <BlockFooter>
-                    <Link to="/signup">
-                        <Button icon="" type="outlined" label="Sign-up" />
-                    </Link>
+                    {/* <Link to="/signup">
+                     <Button icon="" type="outlined" label="Sign-up" />
+                    </Link> */}
+                    <p></p>
                     <Button type="submit" icon="logout" label="Login" />
                 </BlockFooter>
                 </form>

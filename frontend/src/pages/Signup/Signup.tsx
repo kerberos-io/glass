@@ -41,19 +41,19 @@ const mapStateToProps = (state:any) => ({
         name:"email"
     }
     return(   
-        <LandingLayout>
-            <section className="login-signup-body">
+        <LandingLayout title="Kerberos Glass" version="v1.0" description="A single pane of glass for Kerberos Open Source and Kerberos Enterprise agents">
+            <section className="signup-body">
                 <Block>
                     <form onSubmit={handleSubmit} noValidate>
                     <BlockHeader>
                     <div>
                         <Icon label="verify" /> <h4>Signup</h4>
                     </div>
-                    <Input                        
+                    {/* <Input                        
                         iconright="arrow-down-full-sm"
                         type="button"
                         value="EN"
-                        />
+                        /> */}
                 </BlockHeader>
                 {loginError && <AlertMessage  message={error} />}  
                 <BlockBody>
@@ -63,6 +63,7 @@ const mapStateToProps = (state:any) => ({
                         placeholder="Your username"
                         type="text"
                         {...usernameProps}
+                        iconright=""
 
                     />
                     <Input
@@ -96,8 +97,8 @@ const mapStateToProps = (state:any) => ({
                     <TermsOfUse {...termsofuse}/>
                 </BlockBody>
                 <BlockFooter>
-                    <Button icon="verify" type="outlined" label="Sign-up" />
-                    <Button type="transparent" icon="verify" label="Sign-up" />
+                    {/* <Button icon="" type="outlined" label="Sign-up" /> */}<p></p>
+                    <Button type="default" icon="verify" label="Sign-up" />
                 </BlockFooter>
                 </form>
             </Block>
