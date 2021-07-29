@@ -9,8 +9,8 @@ import App from "./App"
 import rootReducer from './reducers';
 import RequireAuth from './containers/RequireAuth';
 import RequireGuest from './containers/RequireGuest';
-import Login from "./pages/Login/Login";
-import {Cameras, Connections, Dashboard, LatestEvents, LiveStream, Media } from "./pages";
+//import Login from "./pages/LoginOld/Login";
+import {Cameras, Connections, Dashboard, LatestEvents, LiveStream, Media, Login, Signup } from "./pages";
 import {applyMiddleware, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
@@ -63,6 +63,7 @@ ReactDOM.render(
             <React.StrictMode>
                 <Switch>
                     <Route path="/login" component={RequireGuest(Login)} />
+                    <Route path="/signup" component={RequireGuest(Signup)} />
                     <App>
                         <Route exact path="/" render={() => <Redirect to="/dashboard" />} />
                         <Route exact path="/dashboard" component={RequireAuth(Dashboard)} />

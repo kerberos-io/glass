@@ -13,7 +13,7 @@ import { getHD, getSD } from "../../reducers/data";
 
 export default function LiveStream() {
 
-  const showVideoWall = true;
+  const showVideoWall = false;
   const videosData: any[] = [];
 
   const handleClickVideoWall = () => {
