@@ -1,18 +1,14 @@
-import React from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { push } from 'react-router-redux';
-import PropTypes from 'prop-types';
+import React from "react";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import { push } from "react-router-redux";
+import PropTypes from "prop-types";
 
 export default function RequireInstall(ComposedComponent) {
   class Install extends React.Component {
     componentDidMount() {
-      const {
-        isAuthenticated,
-        isInstalled,
-        redirectDashboard,
-        redirectLogin,
-      } = this.props;
+      const { isAuthenticated, isInstalled, redirectDashboard, redirectLogin } =
+        this.props;
       if (isInstalled) {
         if (isAuthenticated) {
           redirectDashboard();
@@ -36,8 +32,8 @@ export default function RequireInstall(ComposedComponent) {
   const mapDispatchToProps = (dispatch) =>
     bindActionCreators(
       {
-        redirectDashboard: () => push('/'),
-        redirectLogin: () => push('/login'),
+        redirectDashboard: () => push("/"),
+        redirectLogin: () => push("/login"),
       },
       dispatch
     );

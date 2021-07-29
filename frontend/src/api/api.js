@@ -1,19 +1,19 @@
-import axios from 'axios';
-import config from '../config';
+import axios from "axios";
+import config from "../config";
 
 const axiosBase = axios.create({
   baseURL: config.API_URL,
 });
 
 axiosBase.interceptors.request.use((request) => {
-  request.headers.Authorization = `Bearer ${localStorage.getItem('token')}`;
+  request.headers.Authorization = `Bearer ${localStorage.getItem("token")}`;
   return request;
 });
 
 export default axiosBase;
 
 export function getToken() {
-  return localStorage.getItem('token');
+  return localStorage.getItem("token");
 }
 
 export function getAPIObject(url) {

@@ -1,6 +1,6 @@
-import React from 'react';
-import styles from './Logo.module.scss';
-import LogoSVG from '../../images/icons/logo.svg';
+import React from "react";
+import styles from "./Logo.module.scss";
+import LogoSVG from "../../images/icons/logo.svg";
 
 export default function Logo() {
   return (

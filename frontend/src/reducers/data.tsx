@@ -64,5 +64,5 @@ const DataSlice = createSlice({
   },
 });
 
-export default DataSlice
+export default DataSlice;
 export const { getHD, getSD } = DataSlice.actions;

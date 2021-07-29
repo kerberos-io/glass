@@ -1,12 +1,12 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import classNames from 'classnames';
-import { withRouter } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import { login } from '../../../../actions';
-import styles from './LoginForm.module.scss';
-import LoginIcon from '../../images/icons/login.svg';
-import ShowPasswordIcon from '../../images/icons/discover-password.svg';
+import React from "react";
+import { connect } from "react-redux";
+import classNames from "classnames";
+import { withRouter } from "react-router-dom";
+import PropTypes from "prop-types";
+import { login } from "../../../../actions";
+import styles from "./LoginForm.module.scss";
+import LoginIcon from "../../images/icons/login.svg";
+import ShowPasswordIcon from "../../images/icons/discover-password.svg";
 
 class LoginForm extends React.Component {
   constructor() {
@@ -23,7 +23,7 @@ class LoginForm extends React.Component {
     const { dispatchLogin } = this.props;
     const { target } = event;
     const data = new FormData(target);
-    dispatchLogin(data.get('username'), data.get('password'));
+    dispatchLogin(data.get("username"), data.get("password"));
   }
 
   togglePasswordVisible() {
@@ -58,7 +58,7 @@ class LoginForm extends React.Component {
               <div className={classNames(styles.input, styles.password)}>
                 <div className={styles.passwordWrapper}>
                   <input
-                    type={passwordVisible ? 'text' : 'password'}
+                    type={passwordVisible ? "text" : "password"}
                     id="password"
                     name="password"
                     placeholder="Your password"

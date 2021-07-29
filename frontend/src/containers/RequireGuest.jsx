@@ -1,8 +1,8 @@
-import React from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { push } from 'react-router-redux';
-import PropTypes from 'prop-types';
+import React from "react";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import { push } from "react-router-redux";
+import PropTypes from "prop-types";
 
 export default function RequireGuest(ComposedComponent) {
   class Guest extends React.Component {
@@ -34,8 +34,8 @@ export default function RequireGuest(ComposedComponent) {
   const mapDispatchToProps = (dispatch) =>
     bindActionCreators(
       {
-        redirectDashboard: () => push('/'),
-        redirectInstallation: () => push('/install'),
+        redirectDashboard: () => push("/"),
+        redirectInstallation: () => push("/install"),
       },
       dispatch
     );

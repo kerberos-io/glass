@@ -4,7 +4,9 @@
   Override SASS' handling of HSL(a) color functions, don't touch it and let CSS handle it itself.
   This will enable the trick with variable alpha channels for CSS color variables (see below).
 */
-@function hsla($args...) { @return #{'hsla(#{$args})'}; }
+@function hsla($args...) {
+  @return #{"hsla(#{$args})"};
+}
 
 /*
   Function for defining (not only) vertical rhythm by multiplies of 12px
@@ -19,26 +21,31 @@
 // Bulma breakpoints
 $gap: 32px;
 $tablet: 769px;
-$desktop:	960px + (2 * $gap);
-$widescreen:	1152px + (2 * $gap);
+$desktop: 960px + (2 * $gap);
+$widescreen: 1152px + (2 * $gap);
 $fullhd: 1344px + (2 * $gap);
-$videocard-widesreen:34vw;
-$videocard-desktop:66vw;
-$videocard-wall:50vw;
+$videocard-widesreen: 34vw;
+$videocard-desktop: 66vw;
+$videocard-wall: 50vw;
 
 // Responsive mixin (Bulma's)
 @mixin break($media) {
   @if $media == t {
-    @media only screen and (min-width: $tablet) { @content; }
-  }
-  @else if $media == d {
-    @media only screen and (min-width: $desktop) { @content; }
-  }
-  @else if $media == w {
-    @media only screen and (min-width: $widescreen) { @content; }
-  }
-  @else if $media == f {
-    @media only screen and (min-width: $fullhd) { @content; }
+    @media only screen and (min-width: $tablet) {
+      @content;
+    }
+  } @else if $media == d {
+    @media only screen and (min-width: $desktop) {
+      @content;
+    }
+  } @else if $media == w {
+    @media only screen and (min-width: $widescreen) {
+      @content;
+    }
+  } @else if $media == f {
+    @media only screen and (min-width: $fullhd) {
+      @content;
+    }
   }
 }
 
@@ -48,14 +55,14 @@ $videocard-wall:50vw;
     @include break-from(450px) { ... }
 */
 @mixin break-from($size) {
-  @media only screen and (min-width: $size) { @content; }
+  @media only screen and (min-width: $size) {
+    @content;
+  }
 }
-
 
 // ========== VARIABLES ========== //
 
 :root {
-
   // ---------- UI ---------- //
 
   --radius: 4px;
@@ -65,10 +72,10 @@ $videocard-wall:50vw;
     --main-content-gutter: 36px;
   }
   @include break(w) {
-    --main-content-gutter: 48px;
+    // --main-content-gutter: 48px;
+    --main-content-gutter: 24px;
   }
 }
-
 
 // ========== PLACEHOLDERS ========== //
 /*
@@ -114,5 +121,8 @@ $videocard-wall:50vw;
 
 %input-focus-border {
   border: 1px solid var(--hub);
+}
 
+%inner-shadow-right {
+  box-shadow: -1px 0px 0px 0px hsla(0, 5%, 91%, 1) inset;
 }

@@ -1,8 +1,8 @@
-import React from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { push } from 'react-router-redux';
-import PropTypes from 'prop-types';
+import React from "react";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import { push } from "react-router-redux";
+import PropTypes from "prop-types";
 
 export default function RequireAuth(ComposedComponent) {
   class Auth extends React.Component {
@@ -34,8 +34,8 @@ export default function RequireAuth(ComposedComponent) {
   const mapDispatchToProps = (dispatch) =>
     bindActionCreators(
       {
-        redirectLogin: () => push('/login'),
-        redirectInstallation: () => push('/install'),
+        redirectLogin: () => push("/login"),
+        redirectInstallation: () => push("/install"),
       },
       dispatch
     );

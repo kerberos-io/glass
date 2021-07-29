@@ -58,7 +58,7 @@ const initialState: State = {
         },
       ],
     },
-  ]
+  ],
 };
 
 const UISlice = createSlice({
@@ -71,5 +71,5 @@ const UISlice = createSlice({
     },
   },
 });
-export default UISlice
+export default UISlice;
 export const { toogleVideoWall } = UISlice.actions;

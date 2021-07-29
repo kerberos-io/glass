@@ -1,10 +1,21 @@
-#page-cameras{
-    #flag-button{
-        button{
-            padding: 8px 14px;
-            span{
-                display: none;
-            }
+@import "../../app.variables";
+#page-cameras {
+  header.breadcrumb {
+    padding-right: size(2);
+    padding-left: size(2);
+    #flag-button {
+      margin-right: size(2);
+      button {
+        padding: size(1)-4 size(1) + 2;
+        span {
+          display: none;
         }
+      }
     }
+  }
+
+  .setup-box {
+    margin-top: size(10);
+    padding: 108px 260px;
+  }
 }

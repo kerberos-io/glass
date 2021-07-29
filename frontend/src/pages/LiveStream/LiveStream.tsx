@@ -12,16 +12,12 @@ import { toogleVideoWall } from "../../reducers/ui";
 import { getHD, getSD } from "../../reducers/data";
 
 export default function LiveStream() {
-
   const showVideoWall = false;
   const videosData: any[] = [];
 
-  const handleClickVideoWall = () => {
-  };
-  const handleClickHD = () => {
-  };
-  const handleClickSD = () => {
-  };
+  const handleClickVideoWall = () => {};
+  const handleClickHD = () => {};
+  const handleClickSD = () => {};
   const actions = {
     handleClickHD,
     handleClickSD,

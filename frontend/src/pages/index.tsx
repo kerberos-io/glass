@@ -7,4 +7,13 @@ import LatestEvents from "./LatestEvents/LatestEvents";
 import Login from "./Login/Login";
 import Signup from "./Signup/Signup";
 
-export { Cameras, Connections, Dashboard, LiveStream, Media, LatestEvents,Login,Signup };
+export {
+  Cameras,
+  Connections,
+  Dashboard,
+  LiveStream,
+  Media,
+  LatestEvents,
+  Login,
+  Signup,
+};
