@@ -28,8 +28,7 @@ const mapDispatchToProps = (dispatch: any) => ({
 });
 
 function Login(props: any) {
-
-  const formRef = React.useRef() as any 
+  const formRef = React.useRef() as any;
   const { loginError, error } = props;
 
   const handleSubmit = (event: React.SyntheticEvent | any) => {
@@ -40,26 +39,26 @@ function Login(props: any) {
     dispatchLogin(data.get("username"), data.get("password"));
   };
 
-  const handleKeyDown =(event:any)=>{
-    if(event.key==="Enter"){
+  const handleKeyDown = (event: any) => {
+    if (event.key === "Enter") {
       event.preventDefault();
       const { dispatchLogin } = props;
       const data = new FormData(formRef.current);
       dispatchLogin(data.get("username"), data.get("password"));
     }
-  }
+  };
 
   const formEvents = {
-    onKeyDown:handleKeyDown,
-    onSubmit:handleSubmit
-  }
+    onKeyDown: handleKeyDown,
+    onSubmit: handleSubmit,
+  };
   const usernameProps = {
     name: "username",
   };
   const passwordProps = {
     name: "password",
   };
-  
+
   return (
     <LandingLayout
       title="Kerberos Glass"

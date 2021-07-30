@@ -59,7 +59,7 @@ class App extends React.Component<Props, State> {
               />
               <NavigationItem
                 link={"livestream"}
-                title={"Livestreams"}
+                title={"Live stream"}
                 icon={"livestream"}
               />
               <NavigationItem link={"media"} title={"Media"} icon={"media"} />

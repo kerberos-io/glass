@@ -1,0 +1,32 @@
+@import "../../app.variables";
+#page-media {
+  header.breadcrumb {
+    #flag-button {
+      margin-right: size(2);
+      button {
+        padding: size(1)-4 size(1) + 2;
+        span {
+          display: none;
+        }
+      }
+    }
+  }
+  .videos-date {
+    display: flex;
+    align-items: center;
+    h2 {
+      font-size: 22px;
+      margin-right: size(1);
+      font-weight: 400;
+    }
+    p {
+      font-size: 18px;
+      font-weight: 400;
+    }
+  }
+  .load-button {
+    display: flex;
+    justify-content: center;
+    margin-top: size(3);
+  }
+}
