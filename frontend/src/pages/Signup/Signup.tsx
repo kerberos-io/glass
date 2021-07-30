@@ -34,6 +34,8 @@ const mapDispatchToProps = (dispatch: any) => ({
   },
 });
 function Signup(props: any) {
+
+  const formRef = React.useRef() as any 
   const { loginError, error } = props;
 
   const handleSubmit = (event: any) => {
@@ -43,6 +45,20 @@ function Signup(props: any) {
     const data = new FormData(target);
     dispatchLogin(data.get("username"), data.get("password"));
   };
+
+  const handleKeyDown =(event:any)=>{
+    if(event.key==="Enter"){
+      event.preventDefault();
+      const { dispatchLogin } = props;
+      const data = new FormData(formRef.current);
+      dispatchLogin(data.get("username"), data.get("password"));
+    }
+  }
+
+  const formEvents = {
+    onKeyDown:handleKeyDown,
+    onSubmit:handleSubmit
+  }
   const usernameProps = {
     name: "username",
   };
@@ -60,7 +76,7 @@ function Signup(props: any) {
     >
       <section className="signup-body">
         <Block>
-          <form onSubmit={handleSubmit} noValidate>
+          <form ref={formRef} {...formEvents}>
             <BlockHeader>
               <div>
                 <Icon label="verify" /> <h4>Signup</h4>
