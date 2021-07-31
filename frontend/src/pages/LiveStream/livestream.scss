@@ -2,31 +2,17 @@
 #page-live-stream {
   .breadcrumb {
     .row {
-      .page-title {
-        color: var(--text-muted);
-        flex: none;
+      .actions {
+        .sweet-toggling {
+          margin-right: size(2) !important;
+        }
       }
     }
   }
 
   .control-bar {
     padding: 0;
-    .location-button {
-      .generic-input {
-        .input-bar {
-          padding-right: 0;
-          .input-box {
-            padding-right: 0;
-          }
-        }
-      }
-    }
-    .display-group {
-      // padding-top: 30px;
-      // padding-bottom: 30px;
-    }
   }
-
 
   .setup-box {
     margin-top: size(6);

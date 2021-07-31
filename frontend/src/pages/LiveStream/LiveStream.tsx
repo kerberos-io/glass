@@ -14,6 +14,9 @@ import {
   VideoCard,
   VideoContainer,
   VideoWallHeader,
+  Toggle,
+  Dropdown,
+  DropList,
 } from "@kerberos-io/ui";
 import "./livestream.scss";
 import { useDispatch, useSelector } from "react-redux";
@@ -21,6 +24,26 @@ import { toogleVideoWall } from "../../reducers/ui";
 import { getHD, getSD } from "../../reducers/data";
 
 export default function LiveStream() {
+  const [state, setState] = React.useState({
+    toggleIcon: false,
+    isVideoWall: false,
+  });
+
+  const handleClick = () => {
+    const id = setTimeout(
+      () =>
+        setState((preS) => ({
+          ...preS,
+          isVideoWall: true,
+        })),
+      1000
+    );
+    setState((preS) => ({
+      ...preS,
+      toggleIcon: !preS.toggleIcon,
+    }));
+  };
+
   return (
     <div id="page-live-stream">
       <Breadcrumb
@@ -28,10 +51,8 @@ export default function LiveStream() {
         level1={"Get instant overview of all your online cameras"}
       >
         <p className="item">Video wall</p>
-        <span>
-          <Icon label="toggle-off" />
-        </span>
-        <Alert platter notify status="hub" />
+        <Toggle status="hub" onClick={handleClick} on={state.toggleIcon} />
+        <Alert platter notify blink status="hub" />
       </Breadcrumb>
       <ControlBar>
         <FilterSearch>
@@ -59,16 +80,15 @@ export default function LiveStream() {
           />
         </FilterSort>
       </ControlBar>
-
       <>
-        <VideoWallHeader hide={true} grid={[4, 6, 19]} />
-        <VideoContainer cols={2} isVideoWall={false}>
+        <VideoWallHeader hide={!state.isVideoWall} grid={[4, 6, 19]} />
+        <VideoContainer cols={2} isVideoWall={state.isVideoWall}>
           {Array(4)
             .fill(4)
             .map((el) => (
               <VideoCard
                 camera="Camera 12-Outside"
-                isVideoWall={false}
+                isVideoWall={state.isVideoWall}
                 headerStatus="alert"
                 headerStatusTitle="event-detected"
                 label="Düsseldorf Autobahn"

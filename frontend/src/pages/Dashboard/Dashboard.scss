@@ -1,0 +1,44 @@
+@import "../../app.variables";
+
+#page-dashboard {
+  .breadcrumb {
+    .row {
+      .actions {
+        h5 {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .kpies {
+    display: flex;
+    justify-content: space-between;
+    .kpi {
+      width: 23%;
+    }
+  }
+
+  .tasks-and-sites {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    .block-generic {
+      width: 48.5%;
+      height: fit-content;
+      .block-body {
+        padding: 0;
+        margin: 0;
+        width: auto;
+        .table-container {
+          table {
+            border-spacing: 0;
+          }
+        }
+        img {
+          width: 100%;
+          height: 210px;
+        }
+      }
+    }
+  }
+}

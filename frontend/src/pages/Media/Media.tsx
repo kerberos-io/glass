@@ -1,9 +1,4 @@
-import {
-  Breadcrumb,
-  Button,
-  VideoCard,
-  VideoContainer,
-} from "@kerberos-io/ui";
+import { Breadcrumb, Button, VideoCard, VideoContainer } from "@kerberos-io/ui";
 import "./media.scss";
 export default function Media() {
   return (
